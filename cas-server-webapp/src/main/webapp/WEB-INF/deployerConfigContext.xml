@@ -143,7 +143,7 @@
             <value>com.mysql.jdbc.Driver</value>
         </property>
         <property name="url">
-            <value>jdbc:mysql://localhost:3306/admin_ci?useUnicode=true&amp;characterEncoding=UTF-8&amp;characterSetResults=UTF-8</value>
+            <value>jdbc:mysql://localhost:3306/cas_dev?useUnicode=true&amp;characterEncoding=UTF-8&amp;characterSetResults=UTF-8</value>
         </property>
         <property name="username">
             <value>root</value>
