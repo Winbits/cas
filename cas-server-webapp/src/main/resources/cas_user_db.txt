@@ -1,0 +1,3 @@
+codeisdesign::password
+admin::password
+cas@winbits.com::s3cr3t0
