@@ -132,7 +132,7 @@
 
                 <bean class="org.jasig.cas.adaptors.jdbc.QueryDatabaseAuthenticationHandler">
                     <property name="dataSource" ref="dataSource"/>
-                    <property name="sql" value="select password from user  where lower(username) = lower(?)"/>
+                    <property name="sql" value="select password from admin_user  where lower(email) = lower(?) and enabled = 1"/>
                     <property name="passwordEncoder" ref="passwordEncoder"/>
                 </bean>
             </list>
@@ -143,7 +143,7 @@
             <value>com.mysql.jdbc.Driver</value>
         </property>
         <property name="url">
-            <value>jdbc:mysql://localhost:3306/cas_dev?useUnicode=true&amp;characterEncoding=UTF-8&amp;characterSetResults=UTF-8</value>
+            <value>jdbc:mysql://localhost:3306/winbits?useUnicode=true&amp;characterEncoding=UTF-8&amp;characterSetResults=UTF-8</value>
         </property>
         <property name="username">
             <value>root</value>
