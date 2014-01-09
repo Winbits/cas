@@ -143,13 +143,13 @@
             <value>com.mysql.jdbc.Driver</value>
         </property>
         <property name="url">
-            <value>jdbc:mysql://localhost:3306/winbits?useUnicode=true&amp;characterEncoding=UTF-8&amp;characterSetResults=UTF-8</value>
+            <value>jdbc:mysql://${bd}?useUnicode=true&amp;characterEncoding=UTF-8&amp;characterSetResults=UTF-8</value>
         </property>
         <property name="username">
-            <value>root</value>
+            <value>${username}</value>
         </property>
         <property name="password">
-            <value></value>
+            <value>${password}</value>
         </property>
     </bean>
     <bean id="passwordEncoder"

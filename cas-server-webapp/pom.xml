@@ -239,6 +239,7 @@
               <targetPath>WEB-INF</targetPath>
               <includes>
                 <include>**/web.xml</include>
+                <include>**/deployerConfigContext.xml</include>
               </includes>
             </resource>
           </webResources>
