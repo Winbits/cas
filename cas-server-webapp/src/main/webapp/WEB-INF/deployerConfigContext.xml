@@ -132,7 +132,7 @@
 
                 <bean class="org.jasig.cas.adaptors.jdbc.QueryDatabaseAuthenticationHandler">
                     <property name="dataSource" ref="dataSource"/>
-                    <property name="sql" value="select password from admin_user  where lower(email) = lower(?) and enabled = 1"/>
+                    <property name="sql" value="select password from admin_user  where lower(username) = lower(?) and enabled = true and account_expired = false and account_locked = false and password_expired = false"/>
                     <property name="passwordEncoder" ref="passwordEncoder"/>
                 </bean>
             </list>

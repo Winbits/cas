@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html lang="en" class="login_page">
 <head>
     <meta charset="utf-8">
@@ -15,6 +16,7 @@
     <script type="text/javascript"
             src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/jquery.validate.min.js"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.1.1/bootstrap.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.form/3.46/jquery.form.js"></script>
     <!-- Favicon -->
     <link rel="shortcut icon" href="favicon.ico"/>
     <script src="js/winbitsLogin.js"></script>
@@ -23,8 +25,18 @@
 
 <div class="login_box">
 
-    <form action="/cas/login" method="post" id="login_form">
+    <form:form commandName="${commandName}" method="post" id="login_form" htmlEscape="true">
+        <form:errors path="*" id="msg" cssClass="errors" element="div">
+            <%
+                out.println("No Auth");
+                response.sendError(401);
+            %>
+        </form:errors>
+
         <div class="top_b">Ingresa al administrador winbits</div>
+        <div class="alert alert-error" id="errorWinbits" style="display:none;">
+            <strong>credenciales no validas.</strong>
+        </div>
         <div class="cnt_b">
             <div class="formRow">
                 <div class="input-prepend">
@@ -53,7 +65,7 @@
             <input type="hidden" name="lt" value="${loginTicket}"/>
             <input type="hidden" name="execution" value="${flowExecutionKey}"/>
             <input type="hidden" name="_eventId" value="submit"/></div>
-    </form>
+    </form:form>
 
     <form action="home.html" method="post" id="pass_form" style="display:none">
         <div class="top_b">&iquest;No recuerdas tu password?</div>
