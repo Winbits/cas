@@ -73,7 +73,7 @@ $(document).ready(function () {
       $(element).closest('div').append(error);
     }
   });
-  $("#login_form").ajaxForm({
+  /*$("#login_form").ajaxForm({
     success: function() {
       console.log("Crear cookie remember me y Redireccionar");
     },
@@ -81,6 +81,6 @@ $(document).ready(function () {
       console.log('Pedos!');
       $("#errorWinbits").attr({'style' : "display:block"});
     }
-  });
+  });*/
 
 });

@@ -56,8 +56,7 @@
 						<form:password cssClass="required" cssErrorClass="error" id="password" size="25" tabindex="2" path="password"  accesskey="${passwordAccessKey}" htmlEscape="true" autocomplete="off" />
                     </div>
                     <div class="row check">
-                        <input id="warn" name="warn" value="true" tabindex="3" accesskey="<spring:message code="screen.welcome.label.warn.accesskey" />" type="checkbox" />
-                        <label for="warn"><spring:message code="screen.welcome.label.warn" /></label>
+                        <input type="checkbox" name="rememberMe" id="rememberMe" value="true" /> <label for="rememberMe">Remember Me</label>
                     </div>
                     <div class="row btn-row">
 						<input type="hidden" name="lt" value="${loginTicket}" />

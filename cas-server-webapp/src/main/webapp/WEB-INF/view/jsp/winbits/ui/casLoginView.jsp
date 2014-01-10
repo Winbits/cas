@@ -26,17 +26,16 @@
 <div class="login_box">
 
     <form:form commandName="${commandName}" method="post" id="login_form" htmlEscape="true">
+        <div class="top_b">Ingresa al administrador winbits</div>
         <form:errors path="*" id="msg" cssClass="errors" element="div">
-            <%
+            <%--
                 out.println("No Auth");
                 response.sendError(401);
-            %>
+            --%>
+            <div class="alert alert-error" id="errorWinbits" >
+                <strong>credenciales no validas.</strong>
+            </div>
         </form:errors>
-
-        <div class="top_b">Ingresa al administrador winbits</div>
-        <div class="alert alert-error" id="errorWinbits" style="display:none;">
-            <strong>credenciales no validas.</strong>
-        </div>
         <div class="cnt_b">
             <div class="formRow">
                 <div class="input-prepend">
@@ -53,7 +52,8 @@
                 </div>
             </div>
             <div class="formRow clearfix">
-                <label class="checkbox"><input type="checkbox"/>Recu&eacute;rdame en este equipo</label>
+                <input type="checkbox" name="rememberMe" id="rememberMe" value="true" />
+             <label for="rememberMe"/> Recu&eacute;rdame en este equipo</label>
             </div>
         </div>
         <div class="btm_b clearfix">
