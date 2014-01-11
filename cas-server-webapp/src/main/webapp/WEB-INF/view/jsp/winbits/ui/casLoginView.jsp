@@ -17,6 +17,7 @@
             src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/jquery.validate.min.js"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.1.1/bootstrap.js"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.form/3.46/jquery.form.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.1/jquery.xdomainrequest.min.js"></script>
     <!-- Favicon -->
     <link rel="shortcut icon" href="favicon.ico"/>
     <script src="js/winbitsLogin.js"></script>
@@ -72,16 +73,22 @@
         <div class="alert alert-info alert-login">
             Ingresa el email con el que estas registrado y recibir&aacute;s un link para crear un password nuevo
         </div>
+        <div class="alert alert-error" id="errorToSendMail" style="display:none;">
+            <strong>La direcci&oacute;n de correo enviada no fue encontrada.</strong>
+        </div>
+        <div class="alert alert-success" id="successToSendMail" style="display:none;">
+            <strong>Se env&iacute;o satisfactoriamente el password al email indicado.</strong>
+        </div>
         <div class="cnt_b">
             <div class="formRow clearfix">
                 <div class="input-prepend">
-                    <span class="add-on">@</span><input type="text" id="mail" name="mail" placeholder="Tu email"
+                    <span class="add-on">@</span><input type="text" id="usernameEmail" name="username" placeholder="Tu email"
                                                         value=""/>
                 </div>
             </div>
         </div>
         <div class="btm_b tac">
-            <button class="btn btn-inverse" type="submit">Recupera password</button>
+            <button class="btn btn-inverse" type="submit" id="sendEmailButton">Recupera password</button>
         </div>
     </form>
 

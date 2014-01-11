@@ -55,7 +55,7 @@ $(document).ready(function () {
     errorClass: 'error',
     validClass: 'valid',
     rules: {
-      mail: { required: true, minlength: 3, email: true }
+      username: { required: true, minlength: 3, email: true }
     },
     highlight: function (element) {
       $(element).closest('div').addClass("f_error");
@@ -73,14 +73,22 @@ $(document).ready(function () {
       $(element).closest('div').append(error);
     }
   });
-  /*$("#login_form").ajaxForm({
+  $("#pass_form").ajaxForm({
+    url:'http://localhost:8007/admin/register/forgotPassword',
+    beforeSubmit:function(){
+      $("#errorToSendMail").attr({'style' : "display:none"});
+      $("#successToSendMail").attr({'style' : "display:none"});
+      $("#sendEmail").attr('disabled','disabled');
+    } ,
     success: function() {
-      console.log("Crear cookie remember me y Redireccionar");
-    },
-    error: function() {
-      console.log('Pedos!');
-      $("#errorWinbits").attr({'style' : "display:block"});
+          console.log('success');
+      $("#successToSendMail").attr({'style' : "display:block"});
+      $("#sendMailButton").removeAttr('disabled');
+    },error:function(){
+      console.log(arguments);
+      $("#errorToSendMail").attr({'style' : "display:block"});
+      $("#sendEmailButton").removeAttr('disabled');
     }
-  });*/
+  });
 
 });
