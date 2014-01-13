@@ -74,7 +74,7 @@ $(document).ready(function () {
     }
   });
   $("#pass_form").ajaxForm({
-    url:'http://localhost:8007/admin/register/forgotPassword',
+    url:$('#winbitsAdminUrl').val(),
     beforeSubmit:function(){
       $("#errorToSendMail").attr({'style' : "display:none"});
       $("#successToSendMail").attr({'style' : "display:none"});

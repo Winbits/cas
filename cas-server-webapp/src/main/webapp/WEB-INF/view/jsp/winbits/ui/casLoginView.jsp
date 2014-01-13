@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html lang="en" class="login_page">
 <head>
@@ -17,15 +18,16 @@
             src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/jquery.validate.min.js"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.1.1/bootstrap.js"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.form/3.46/jquery.form.js"></script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.1/jquery.xdomainrequest.min.js"></script>
+    <script type="text/javascript"
+            src="//cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.1/jquery.xdomainrequest.min.js"></script>
     <!-- Favicon -->
     <link rel="shortcut icon" href="favicon.ico"/>
     <script src="js/winbitsLogin.js"></script>
 </head>
 <body>
+<input type="hidden" id="winbitsAdminUrl" name="winbitsAdminUrl" value="<spring:message code='winbitsAdminUrl'/>"/>
 
 <div class="login_box">
-
     <form:form commandName="${commandName}" method="post" id="login_form" htmlEscape="true">
         <div class="top_b">Ingresa al administrador winbits</div>
         <form:errors path="*" id="msg" cssClass="errors" element="div">
@@ -33,7 +35,7 @@
                 out.println("No Auth");
                 response.sendError(401);
             --%>
-            <div class="alert alert-error" id="errorWinbits" >
+            <div class="alert alert-error" id="errorWinbits">
                 <strong>credenciales no validas.</strong>
             </div>
         </form:errors>
@@ -53,8 +55,8 @@
                 </div>
             </div>
             <div class="formRow clearfix">
-                <input type="checkbox" name="rememberMe" id="rememberMe" value="true" />
-             <label for="rememberMe"/> Recu&eacute;rdame en este equipo</label>
+                <input type="checkbox" name="rememberMe" id="rememberMe" value="true"/>
+                <label for="rememberMe"/> Recu&eacute;rdame en este equipo</label>
             </div>
         </div>
         <div class="btm_b clearfix">
@@ -82,7 +84,8 @@
         <div class="cnt_b">
             <div class="formRow clearfix">
                 <div class="input-prepend">
-                    <span class="add-on">@</span><input type="text" id="usernameEmail" name="username" placeholder="Tu email"
+                    <span class="add-on">@</span><input type="text" id="usernameEmail" name="username"
+                                                        placeholder="Tu email"
                                                         value=""/>
                 </div>
             </div>
