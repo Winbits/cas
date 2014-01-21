@@ -44,7 +44,7 @@
     <bean id="grantingTicketExpirationPolicy" class="org.jasig.cas.ticket.support.RememberMeDelegatingExpirationPolicy">
         <property name="sessionExpirationPolicy">
             <bean class="org.jasig.cas.ticket.support.TimeoutExpirationPolicy">
-                <constructor-arg index="0" value="7889400" />
+                <constructor-arg index="0" value="1800000" />
             </bean>
         </property>
         <property name="rememberMeExpirationPolicy">
