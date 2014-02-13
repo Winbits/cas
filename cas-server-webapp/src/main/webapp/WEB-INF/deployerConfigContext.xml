@@ -147,6 +147,9 @@
         <property name="password">
             <value>${password}</value>
         </property>
+        <property name="validationQuery">
+            <value>select 1 from dual</value>
+        </property>
     </bean>
     <bean id="passwordEncoder"
           class="org.jasig.cas.authentication.handler.SpringSecurityPasswordEncoder">
